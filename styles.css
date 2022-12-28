@@ -1,0 +1,25 @@
+.body-form {
+  background-color: #454343;
+}
+
+form {
+  margin: auto;
+  width: 200px;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.btnSubmit {
+  background-color: #333333;
+  color: white;
+  width: 70%;
+}
+
+label {
+  color: white;
+  font-family: sans-serif;
+}
+
+p {
+  color: white;
+}
