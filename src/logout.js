@@ -3,10 +3,13 @@ import {
   getDatabase,
   set,
   ref,
+  update,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -23,20 +26,12 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-const signUp = document.getElementById("signUpButton");
+const logout = document.getElementById("logout");
 
-signUp.addEventListener("click", (e) => {
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-
-      set(ref(database, "users/" + user.uid), {
-        email: email,
-      });
-      alert("Account created!");
+logout.addEventListener("click", (e) => {
+  signOut(auth)
+    .then(() => {
+      console.log("signed out!");
     })
     .catch((error) => {
       const errorCode = error.errorCode;
@@ -44,4 +39,12 @@ signUp.addEventListener("click", (e) => {
 
       alert(errorMessage);
     });
+});
+
+const user = auth.currentUser;
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "signin.html";
+    const uid = user.uid;
+  }
 });
