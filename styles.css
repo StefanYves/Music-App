@@ -2,6 +2,12 @@
   background-color: #454343;
 }
 
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: sans-serif;
+}
+
 form {
   margin: auto;
   width: 200px;
@@ -11,15 +17,51 @@ form {
 
 .btnSubmit {
   background-color: #333333;
+  border: none;
   color: white;
   width: 70%;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.btnSubmit:hover {
+  background-color: #ffc61c;
 }
 
 label {
   color: white;
-  font-family: sans-serif;
 }
 
 p {
   color: white;
+}
+
+.navbar {
+  background-color: #454343;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+.navbar a {
+  padding: 0 20px;
+}
+
+.footer {
+  background-color: #454343;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.body-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }

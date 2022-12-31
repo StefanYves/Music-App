@@ -8,14 +8,9 @@
     <title>Sign-in form</title>
   </head>
   <body class="body-form">
-    <form>
-      <label for="username">Username:</label><br />
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="username"
-      /><br />
+    <form id="sign-in-form">
+      <label for="email">Email:</label><br />
+      <input type="text" id="email" name="email" placeholder="email" /><br />
       <label for="password">Password:</label><br />
       <input
         type="password"
@@ -23,8 +18,9 @@
         name="password"
         placeholder="password"
       /><br /><br />
-      <input type="submit" value="Sign in" class="btnSubmit" />
+      <input type="submit" value="Sign in" class="btnSubmit" id="signIn" />
       <p>No account? <a href="signup.html">Sign up</a></p>
     </form>
+    <script type="module" src="src/signin.js"></script>
   </body>
 </html>
