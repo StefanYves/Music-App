@@ -70,3 +70,7 @@ main {
   padding: 0 20px;
   cursor: pointer;
 }
+
+.input-label {
+  color: black;
+}
